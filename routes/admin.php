@@ -125,6 +125,21 @@ Route::delete('/contacts/{id}/delete',
 );
 /* contacts */
 
+
+/* products */
+Route::resource('/products', 'ProductController', [
+    'as' => 'admin'
+]);
+
+/* products */
+
+/* categories */
+Route::resource('/categories', 'CategoryController', [
+    'as' => 'admin'
+]);
+
+/* categories */
+
 /* presses */
 
 

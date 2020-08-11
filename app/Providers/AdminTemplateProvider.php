@@ -79,6 +79,30 @@ class AdminTemplateProvider extends ServiceProvider
                 ]);
             }
 
+           
+            if ($this->hasCrudAccessFor('Product')) {
+         
+                $product_tab = [];
+                
+                array_push($product_tab, [
+                    'name' => 'List',
+                    'url' => url('admin/products'),
+                ]);
+
+                array_push($product_tab, [
+                    'name' => 'Categories',
+                    'url' => url('admin/categories'),
+                ]);
+
+
+                array_push($navigation, [
+                    'name' => 'Products',
+                    'icon' => 'fa fa-shopping-basket ',
+                    'sub' => $product_tab
+                    
+                ]);
+            }
+
 
 
             if ($this->hasCrudAccessFor('User') || $this->hasCrudAccessFor('Permission') || $this->hasCrudAccessFor('Permission Group') || $this->hasCrudAccessFor('Role')) {

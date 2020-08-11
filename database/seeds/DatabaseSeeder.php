@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\CategoryPerProduct;
+use App\Models\ProductCategory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -34,5 +37,10 @@ class DatabaseSeeder extends Seeder
         $this->call(SectionsTableSeeder::class);
         $this->call(AttachmentsTableSeeder::class);
         $this->call(AttachablesTableSeeder::class);
+
+        $this->call([ProductTableSeeder::class,
+            ProductCategoryTableSeeder::class,
+            CategoryPerProductTableSeeder::class
+        ]);
     }
 }
